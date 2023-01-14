@@ -24,6 +24,8 @@ app.use('/', routes.home)
 
 
 const server = http.createServer(app);
-const io = require('socket.io')(server)
+const io = require('socket.io')(server,{
+    cors:{origin:['http://127.0.0.1:5500/']}
+})
 io.on('connection', client => { console.log(client.id); });
 server.listen(3000)
