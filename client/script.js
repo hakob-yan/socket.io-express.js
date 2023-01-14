@@ -1,9 +1,12 @@
 const socket = io('http://localhost:3000');
 
-socket.on('connect',()=>{
+socket.on('connect', () => {
     console.log(`you connected to ${socket.id}`);
 });
 
-setInterval(()=>{
-    socket.emit('custom-event','Hi',5)
-},5000)
+socket.on('server-event', (num) => {
+    console.log(num);
+})
+setInterval(() => {
+    socket.emit('custom-event', 'Hi', 5)
+}, 5000)

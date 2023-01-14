@@ -25,12 +25,15 @@ app.use('/', routes.home)
 
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
-    cors: { origin: ['http://127.0.0.1:5500'] }
+    cors: { origin: ['http://localhost:8080'] }
 })
 io.on('connection', client => {
     console.log(client.id);
     client.on('custom-event', (str, num) => {
         console.log(str, num);
-    })
+    });
+    setInterval(()=>{
+        client.emit('server-event',23)
+    },3000)
 });
 server.listen(3000)
