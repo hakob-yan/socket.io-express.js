@@ -29,11 +29,10 @@ const io = require('socket.io')(server, {
 })
 io.on('connection', client => {
     console.log(client.id);
-    client.on('custom-event', (str, num) => {
-        console.log(str, num);
+    client.on('custom-event', (str) => {
+        console.log(str);
+        client.broadcast.emit('server-event', str)
     });
-    setInterval(()=>{
-        client.emit('server-event',23)
-    },3000)
+
 });
 server.listen(3000)

@@ -1,0 +1,30 @@
+body>h1 {
+    text-align: center;
+}
+#block_square{
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid;
+    padding:12px;
+    height: 60vh;
+}
+
+#block_footer{
+    height: 20vh;
+    width: 85%;
+    margin: 15px auto;
+
+}
+form{
+    display: flex;
+   justify-content: space-between;
+   margin: 15px 0;
+}
+#fname{
+    margin-right: auto;
+    margin-left:50px
+}
+#fname1{
+    margin-right: auto;
+    margin-left:66px
+}
